@@ -1,10 +1,11 @@
-# Mini Site PHP + PostgreSQL
+# Site PHP + PostgreSQL + Cache REDIS
 
 Maxime Duhamel 3A1
 
 ## Introduction
 
-Le site web, ainsi que la table items, ont été générées par IA. J'ai fait l'insertion du cache REDIS ensuite.
+La version initiale de ce projet (La table items de la base de données, le README, le site web qui insère et fetch les données dans la bdd postgres) ont été générées par IA.
+J'ai fait l'insertion du cache REDIS par la suite.
 
 ## Description
 Exemple d'application web en PHP permettant :
