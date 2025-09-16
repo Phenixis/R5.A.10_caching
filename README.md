@@ -17,8 +17,9 @@ Exemple d'application web en PHP permettant :
 - Serveur PostgreSQL local
 - Base de données existante (par défaut `testdb`)
 - Utilisateur PostgreSQL (par défaut `postgres` / `postgres`)
+- Serveur Redis local, sinon modifier les valeurs dans `public/redis.php`
 
-Ajustez les identifiants dans `public/config.php`.
+Ajustez les identifiants dans `public/config.php` 
 
 ## Installation rapide
 ```bash
@@ -39,10 +40,6 @@ php -S localhost:8000 -t public
 ```
 Ouvre ensuite : http://localhost:8000
 
-## Utilisation
-- Bouton "Insérer 3 valeurs" : ajoute 3 lignes dans la table `items`.
-- Bouton "Afficher les valeurs" : recharge la page avec `?fetch=1` et affiche jusqu'à 50 dernières entrées.
-
 ## Personnalisation
 Modifie `public/config.php` pour changer :
 ```php
@@ -54,3 +51,10 @@ return [
     'password' => 'postgres',
 ];
 ```
+
+## Utilisation
+1. Appuyez sur le bouton "Insérer 3 valeurs" pour ajouter des entrées de test.
+2. Cliquez sur "Afficher les valeurs" pour récupérer et afficher les dernières entrées. Vous devriez voir un message comme quoi les données ont été chargées depuis la base de données.
+3. Rafraîchissez la page, vous devriez voir un message indiquant que les données ont été chargées depuis le cache Redis.
+4. Appuyez sur le bouton "Insérer 3 valeurs" à nouveau pour ajouter d'autres entrées de test. Vous devriez voir un message indiquant que le cache a été réinitialisé.
+5. Retour à l'étape (2.)
